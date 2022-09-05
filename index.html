@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" onmousemove="mostrarAngulo(event)">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ángulos</title>
+</head>
+<body>
+  <h1 id="angulo">Ángulo a mostrar</h1>
+  <!-- <div style="background-color: green;width: 400px;height: 400px;"></div> -->
+</body>
+<script>
+  function mostrarAngulo(event){
+    // angulo con respecto a la esquina superior izquierda del html
+    var x = event.clientX;
+    var y = event.clientY;
+    var pi = Math.PI;
+    
+    var radianes = Math.atan2(y,x)
+    var grados = radianes*(180/pi)
+    document.getElementById("angulo").innerHTML = grados
+  }
+</script>
+</html>
